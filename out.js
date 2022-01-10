@@ -1,29 +1,35 @@
-// Auto generated at 6-1-2022 17:53
-const stakingTvl = () => {
-};
-const lpStakingTvl = () => {
-};
-const crvStakingTvl = () => {
-};
-const clusterTvl = () => {
-};
-const unknown = () => {
-};
+// Auto generated at 10-1-2022 11:38
 const stakingInfo = {
   "ethereum": [
     {//DHV (solo)
-      meta: {},
-      tvL: unknown
+      meta: {
+        stakingAddress: "0x04595f9010F79422a9b411ef963e4dd1F7107704", // StakingDHV
+        tokenAddress: "0x62Dc4817588d53a056cBbD18231d91ffCcd34b2A", // DHV
+        poolId: 0
+      },
+      tvL: stakingTvl
     },
     {//DHV/ETH (lp)
-      meta: {},
-      tvL: unknown
+      meta: {
+        stakingAddress: "0x4964B3B599B82C3FdDC56e3A9Ffd77d48c6AF0f0", // StakingPools
+        lpAddress: "0x60c5bf43140d6341bebfe13293567fafbe01d65b", // UNI-DHV-WETH
+        underlying: [
+          "0x62Dc4817588d53a056cBbD18231d91ffCcd34b2A", // UNI-DHV-WETH
+          "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" // UNI-DHV-WETH
+        ],
+        poolId: 0
+      },
+      tvL: lpStakingTvl
     }
   ],
   "polygon": [
     {//DHV (solo)
-      meta: {},
-      tvL: unknown
+      meta: {
+        stakingAddress: "0x88cFC1bc9aEb80f6C8f5d310d6C3761c2a646Df7", // StakingDHV
+        tokenAddress: "0x5fCB9de282Af6122ce3518CDe28B7089c9F97b26", // DHV
+        poolId: 0
+      },
+      tvL: stakingTvl
     },
     {//Poly Cluster (cluster)
       meta: {
@@ -38,8 +44,12 @@ const stakingInfo = {
       tvL: clusterTvl
     },
     {//Curve pool (impulse-multiple)
-      meta: {},
-      tvL: unknown
+      meta: {
+        stakingAddress: "0xE6E6982fb5dDF4fcc74cCCe4e4eea774E002D17F", // ImpulseMultiStaking
+        lpAddress: "0xdad97f7713ae9437fa9249920ec8507e5fbb23d3", // CRV-DAI-USDC-USDT-WBTC-WETH
+        poolId: 0
+      },
+      tvL: lpStakingMultipleTvl
     },
     {//DHV/QUICK (impulse)
       meta: {
@@ -160,20 +170,16 @@ const stakingInfo = {
         poolId: 9
       },
       tvL: lpStakingTvl
-    },
-    {//DHV/QUICK (external)
-      meta: {},
-      tvL: unknown
-    },
-    {//DHV/QUICK (external)
-      meta: {},
-      tvL: unknown
     }
   ],
   "bsc": [
     {//DHV (solo)
-      meta: {},
-      tvL: unknown
+      meta: {
+        stakingAddress: "0x35f28aA0B2F34eFF17d2830135312ab2a777De36", // StakingDHV
+        tokenAddress: "0x58759dd469ae5631c42cf8a473992335575b58d7", // DHV
+        poolId: 0
+      },
+      tvL: stakingTvl
     },
     {//BSC-deCluster (cluster)
       meta: {
@@ -182,8 +188,16 @@ const stakingInfo = {
       tvL: clusterTvl
     },
     {//DHV/BUSD (lp)
-      meta: {},
-      tvL: unknown
+      meta: {
+        stakingAddress: "0xF2e8CD1c40C766FEe73f56607fDffa526Ba8fa6c", // StakingPools
+        lpAddress: "0x72ba008B631D9FD5a8E8013023CB3c05E19A7CA9", // PANCAKE-DHV-BUSD
+        underlying: [
+          "0x58759dd469ae5631c42cf8a473992335575b58d7", // PANCAKE-DHV-BUSD
+          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56" // PANCAKE-DHV-BUSD
+        ],
+        poolId: 0
+      },
+      tvL: lpStakingTvl
     },
     {//CAKE/BUSD (impulse)
       meta: {
@@ -332,8 +346,12 @@ const stakingInfo = {
   ],
   "xdai": [
     {//DHV (solo)
-      meta: {},
-      tvL: unknown
+      meta: {
+        stakingAddress: "0x589Ea336092184d9eD74b8263c4eecA73Ed0cE7a", // StakingDHV
+        tokenAddress: "0xFbdd194376de19a88118e84E279b977f165d01b8", // DHV
+        poolId: 0
+      },
+      tvL: stakingTvl
     },
     {//xInfra Cluster (cluster)
       meta: {
@@ -348,8 +366,16 @@ const stakingInfo = {
       tvL: clusterTvl
     },
     {//DHV/XDAI (lp)
-      meta: {},
-      tvL: unknown
+      meta: {
+        stakingAddress: "0xa4E7BE054000603B82B79208aC3eE5428554CaF6", // StakingPools
+        lpAddress: "0x14EE6d20B8167eacb885F4F2F45C3Bf2d4FD06f4", // HONEY-DHV-WXDAI
+        underlying: [
+          "0xFbdd194376de19a88118e84E279b977f165d01b8", // HONEY-DHV-WXDAI
+          "0xe91d153e0b41518a2ce8dd3d7944fa863463a97d" // HONEY-DHV-WXDAI
+        ],
+        poolId: 1
+      },
+      tvL: lpStakingTvl
     }
   ]
 };

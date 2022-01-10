@@ -7,12 +7,6 @@ const { returnDecimals } = require("./projects/helper/utils");
   let configResult = "// Auto generated at " + d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear() + " " +
     d.getHours() + ":" + d.getMinutes() + "\n";
 
-  configResult += "const stakingTvl = () =>{};\n";
-  configResult += "const lpStakingTvl = () =>{};\n";
-  configResult += "const crvStakingTvl = () =>{};\n";
-  configResult += "const clusterTvl = () =>{};\n";
-  configResult += "const unknown = () =>{};\n";
-
   function getNetworkName(id) {
     if (id === 1) {
       return "ethereum";
@@ -43,6 +37,7 @@ const { returnDecimals } = require("./projects/helper/utils");
     const stackingMeta = dehiveConstants.stakingPoolsMeta(networkId);
     let networkBody = "";
     let allStakingPoolBody = "";
+    let skipRecord = false;
 
     for (let k of Object.keys(stackingMeta)) {
       const staking = stackingMeta[k];
@@ -62,11 +57,13 @@ const { returnDecimals } = require("./projects/helper/utils");
           break;
         }
         case "external": {
-
+          skipRecord = true;
           break;
         }
+        case "lp":
         case "impulse": {
 
+          /// ///////impulse///////////
           // // USDC/Quick
           // meta: {
           //   stakingAddress: '0xf4feb23531EdBe471a4493D432f8BB29Bf0A3868',
@@ -78,6 +75,19 @@ const { returnDecimals } = require("./projects/helper/utils");
           //     poolId: 2
           // },
           // tvl: lpStakingTvl
+
+          ////////lp////////////////
+          // meta: {
+          //   stakingAddress: '0x4964B3B599B82C3FdDC56e3A9Ffd77d48c6AF0f0',
+          //     lpAddress: '0x60c5BF43140d6341bebFE13293567FafBe01D65b',
+          //     underlying: [
+          //     '0x62Dc4817588d53a056cBbD18231d91ffCcd34b2A',
+          //     '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+          //   ],
+          //     poolId: 0
+          // },
+          // tvl: lpStakingTvl
+
           body = "{\n";
           body += "stakingAddress: '" + getAssetAddress(networkId, staking.stakingContractSymbol) + "', // " + staking.stakingContractSymbol + "\n";
           body += "lpAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
@@ -94,26 +104,15 @@ const { returnDecimals } = require("./projects/helper/utils");
           break;
         }
         case "impulse-multiple": {
-
-          break;
-        }
-        case "lp": {
-
-
-          // meta: {
-          //   stakingAddress: '0x4964B3B599B82C3FdDC56e3A9Ffd77d48c6AF0f0',
-          //     lpAddress: '0x60c5BF43140d6341bebFE13293567FafBe01D65b',
-          //     underlying: [
-          //     '0x62Dc4817588d53a056cBbD18231d91ffCcd34b2A',
-          //     '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
-          //   ],
-          //     poolId: 0
-          // },
-          // tvl: lpStakingTvl
+          body = "{\n";
+          body += "stakingAddress: '" + getAssetAddress(networkId, staking.stakingContractSymbol) + "', // " + staking.stakingContractSymbol + "\n";
+          body += "lpAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
+          body += "poolId: " + staking.pid + "\n";
+          body += "},\n";
+          tvlName = "lpStakingMultipleTvl";
           break;
         }
         case "solo": {
-
           // // DHV
           // meta: {
           //   stakingAddress: '0x04595f9010F79422a9b411ef963e4dd1F7107704',
@@ -121,14 +120,22 @@ const { returnDecimals } = require("./projects/helper/utils");
           //     poolId: 0,
           // },
           // tvl: stakingTvl
+
+          body = "{\n";
+          body += "stakingAddress: '" + getAssetAddress(networkId, staking.stakingContractSymbol) + "', // " + staking.stakingContractSymbol + "\n";
+          body += "tokenAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
+          body += "poolId: " + staking.pid + "\n";
+          body += "},\n";
+          tvlName = "stakingTvl";
           break;
         }
       }
 
       body = "{//" + staking.displayName + " (" + staking.type + ")\n"
         + "meta: " + body + "tvL: " + tvlName + "\n" + "},\n";
-
-      allStakingPoolBody += body;
+      if (!skipRecord) {
+        allStakingPoolBody += body;
+      }
     }
 
     networkBody = "'" + getNetworkName(networkId) + "'" + " : [\n" + allStakingPoolBody + "],\n";
