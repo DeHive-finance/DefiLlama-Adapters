@@ -14,6 +14,16 @@ async function stakingTvl(chain, meta, ethBlock) {
     })).output.poolSupply;
 }
 
+async function stakingDhvTvl(chain, meta, ethBlock) {
+    return (await sdk.api.abi.call({
+        target: meta.token0Address,
+        abi: abi.balanceOf,
+        params: meta.stakingAddress,
+        chain,
+        block: ethBlock
+    })).output;
+}
+
 async function lpStakingTvl(chain, meta, ethBlock) {
     const { poolSupply } = (await sdk.api.abi.call({
         target: meta.stakingAddress,
@@ -29,7 +39,7 @@ async function lpStakingTvl(chain, meta, ethBlock) {
         abi: abi.totalSupply,
         chain,
         block: ethBlock
-    })).output
+    })).output;
     const lpTotalSupplyBN = new BigNumber(lpTotalSupply);
 
     const tvl = []
@@ -49,29 +59,8 @@ async function lpStakingTvl(chain, meta, ethBlock) {
     return tvl;
 }
 
-async function lpStakingMultipleTvl(chain, meta, ethBlock) {
-    const { assetToken } = (await sdk.api.abi.call({
-        target: meta.stakingAddress,
-        abi: abi.poolInfo,
-        params: meta.poolId,
-        chain,
-        block: ethBlock
-    })).output;
-
-    const assetTotalBalance = (await sdk.api.abi.call({
-        target: assetToken,
-        abi: abi.balanceOf,
-        params: meta.stakingAddress,
-        chain,
-        block: ethBlock
-    })).output;
-    const assetTotalBalanceBN = new BigNumber(assetTotalBalance);
-
-    return assetTotalBalanceBN.integerValue().toFixed();
-}
-
 async function crvStakingTvl(chain, meta, ethBlock) {
-    const { poolSupply } = (await sdk.api.abi.call({
+    const { strategy, poolSupply } = (await sdk.api.abi.call({
         target: meta.stakingAddress,
         abi: abi.poolInfo,
         params: meta.poolId,
@@ -80,14 +69,14 @@ async function crvStakingTvl(chain, meta, ethBlock) {
     })).output;
 
     const underlyingList = (await sdk.api.abi.call({
-        target: meta.strategyAddress,
+        target: strategy,
         abi: abi.listUnderlying,
         chain,
         block: ethBlock
     })).output;
 
     const priceInUnderlying = (await sdk.api.abi.call({
-        target: meta.strategyAddress,
+        target: strategy,
         abi: abi.wantPriceInUnderlying,
         params: poolSupply,
         chain,
@@ -136,11 +125,11 @@ async function chainTvl(chain, chainBlocks) {
             case "stakingTvl":
                 stakingTvlFunction = stakingTvl;
                 break;
+            case "stakingDhvTvl":
+                stakingTvlFunction = stakingDhvTvl;
+                break;
             case "lpStakingTvl":
                 stakingTvlFunction = lpStakingTvl;
-                break;
-            case "lpStakingMultipleTvl":
-                stakingTvlFunction = lpStakingMultipleTvl;
                 break;
             case "crvStakingTvl":
                 stakingTvlFunction = crvStakingTvl;

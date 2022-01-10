@@ -75,10 +75,9 @@ const { returnDecimals } = require("./projects/helper/utils");
         case "impulse-multiple": {
           body = "{\n";
           body += "stakingAddress: '" + getAssetAddress(networkId, staking.stakingContractSymbol) + "', // " + staking.stakingContractSymbol + "\n";
-          body += "lpAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
           body += "poolId: " + staking.pid + "\n";
           body += "},\n";
-          tvlName = "lpStakingMultipleTvl";
+          tvlName = "crvStakingTvl";
           break;
         }
         case "solo": {
@@ -87,7 +86,11 @@ const { returnDecimals } = require("./projects/helper/utils");
           body += "tokenAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
           body += "poolId: " + staking.pid + "\n";
           body += "},\n";
-          tvlName = "stakingTvl";
+          if (staking.asset === "DHV") {
+            tvlName = "stakingDhvTvl";
+          } else {
+            tvlName = "stakingTvl";
+          }
           break;
         }
       }

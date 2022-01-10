@@ -1,4 +1,4 @@
-// Auto generated at 10-1-2022 12:55
+// Auto generated at 10-1-2022 14:23
 module.exports = {
 'ethereum' : [
 {//DHV (solo)
@@ -7,7 +7,7 @@ stakingAddress: '0x04595f9010F79422a9b411ef963e4dd1F7107704', // StakingDHV
 tokenAddress: '0x62Dc4817588d53a056cBbD18231d91ffCcd34b2A', // DHV
 poolId: 0
 },
-tvl: "stakingTvl"
+tvl: "stakingDhvTvl"
 },
 {//DHV/ETH (lp)
 meta: {
@@ -29,7 +29,7 @@ stakingAddress: '0x88cFC1bc9aEb80f6C8f5d310d6C3761c2a646Df7', // StakingDHV
 tokenAddress: '0x5fCB9de282Af6122ce3518CDe28B7089c9F97b26', // DHV
 poolId: 0
 },
-tvl: "stakingTvl"
+tvl: "stakingDhvTvl"
 },
 {//Poly Cluster (cluster)
 meta: {
@@ -46,10 +46,9 @@ tvl: "clusterTvl"
 {//Curve pool (impulse-multiple)
 meta: {
 stakingAddress: '0xE6E6982fb5dDF4fcc74cCCe4e4eea774E002D17F', // ImpulseMultiStaking
-lpAddress: '0xdad97f7713ae9437fa9249920ec8507e5fbb23d3', // CRV-DAI-USDC-USDT-WBTC-WETH
 poolId: 0
 },
-tvl: "lpStakingMultipleTvl"
+tvl: "crvStakingTvl"
 },
 {//DHV/QUICK (impulse)
 meta: {
@@ -179,7 +178,7 @@ stakingAddress: '0x35f28aA0B2F34eFF17d2830135312ab2a777De36', // StakingDHV
 tokenAddress: '0x58759dd469ae5631c42cf8a473992335575b58d7', // DHV
 poolId: 0
 },
-tvl: "stakingTvl"
+tvl: "stakingDhvTvl"
 },
 {//BSC-deCluster (cluster)
 meta: {
@@ -351,7 +350,7 @@ stakingAddress: '0x589Ea336092184d9eD74b8263c4eecA73Ed0cE7a', // StakingDHV
 tokenAddress: '0xFbdd194376de19a88118e84E279b977f165d01b8', // DHV
 poolId: 0
 },
-tvl: "stakingTvl"
+tvl: "stakingDhvTvl"
 },
 {//xInfra Cluster (cluster)
 meta: {
