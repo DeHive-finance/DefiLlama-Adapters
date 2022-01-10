@@ -5,7 +5,7 @@ const abi = require('./abi.json')
 const stakingInfo = require("./stakingInfo");
 
 async function stakingTvl(chain, meta, ethBlock) {
-    console.log('stakingTvl', JSON.stringify(meta, null, 4));
+    console.log('stakingTvl', chain, JSON.stringify(meta, null, 4));
     return (await sdk.api.abi.call({
         target: meta.stakingAddress,
         abi: abi.poolInfo,
@@ -16,8 +16,7 @@ async function stakingTvl(chain, meta, ethBlock) {
 }
 
 async function stakingDhvTvl(chain, meta, ethBlock) {
-    console.log('stakingDhvTvl', JSON.stringify(meta, null, 4));
-    // return "0";
+    console.log('stakingDhvTvl', chain, JSON.stringify(meta, null, 4));
     return (await sdk.api.abi.call({
         target: meta.tokenAddress,
         abi: abi.balanceOf,
@@ -28,7 +27,7 @@ async function stakingDhvTvl(chain, meta, ethBlock) {
 }
 
 async function lpStakingTvl(chain, meta, ethBlock) {
-    console.log('lpStakingTvl', JSON.stringify(meta, null, 4));
+    console.log('lpStakingTvl', chain, JSON.stringify(meta, null, 4));
     const { poolSupply } = (await sdk.api.abi.call({
         target: meta.stakingAddress,
         abi: abi.poolInfo,
@@ -60,12 +59,22 @@ async function lpStakingTvl(chain, meta, ethBlock) {
 
         tvl.push([meta.underlying[i], underlyingTvl.integerValue().toFixed()]);
     }
+
+    if (!!meta.dhvToken) {
+        const dhvBalance = (await sdk.api.abi.call({
+            target: meta.dhvToken,
+            abi: abi.balanceOf,
+            params: meta.stakingAddress,
+            chain,
+            block: ethBlock
+        })).output;
+        tvl.push([meta.dhvToken, dhvBalance]);
+    }
     return tvl;
 }
 
 async function crvStakingTvl(chain, meta, ethBlock) {
-    console.log('crvStakingTvl', JSON.stringify(meta, null, 4));
-    // return "0";
+    console.log('crvStakingTvl', chain, JSON.stringify(meta, null, 4));
     const { poolSupply } = (await sdk.api.abi.call({
         target: meta.stakingAddress,
         abi: abi.poolInfo,
@@ -147,7 +156,7 @@ async function chainTvl(chain, chainBlocks) {
                 console.log('staking', JSON.stringify(staking, null,4));
                 break;
         }
-        const tvls = await stakingTvlFunction(chain, staking.meta, block).catch((e) => (console.error(e)));
+        const tvls = await stakingTvlFunction(chain, staking.meta, block);
         if (typeof tvls === 'string') {
             sdk.util.sumSingleBalance(tvl, transform(staking.meta.tokenAddress), tvls)
         } else {
