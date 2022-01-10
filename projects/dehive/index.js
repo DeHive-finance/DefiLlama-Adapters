@@ -414,16 +414,13 @@ const stakingInfo = {
 }
 
 async function stakingTvl(chain, meta, ethBlock) {
-    console.log("stakingTvl>>>>>>>>>>>>>>>")
-    const res =  (await sdk.api.abi.call({
+    return (await sdk.api.abi.call({
         target: meta.stakingAddress,
         abi: abi.poolInfo,
         params: meta.poolId,
         chain,
         block: ethBlock
     })).output.poolSupply;
-    console.log("stakingTvl<<<<<<<<<<<<<<<<<<<")
-    return res;
 }
 
 async function lpStakingTvl(chain, meta, ethBlock) {
@@ -458,6 +455,31 @@ async function lpStakingTvl(chain, meta, ethBlock) {
 
         tvl.push([meta.underlying[i], underlyingTvl.integerValue().toFixed()]);
     }
+    return tvl;
+}
+
+async function lpStakingMultipleTvl(chain, meta, ethBlock) {
+    const { assetToken } = (await sdk.api.abi.call({
+        target: meta.stakingAddress,
+        abi: abi.poolInfo,
+        params: meta.poolId,
+        chain,
+        block: ethBlock
+    })).output;
+    const poolSupplyBN = new BigNumber(poolSupply);
+
+    const tvl = 0;
+    const underlyingLpBalance = (await sdk.api.abi.call({
+        target: assetToken,
+        abi: abi.balanceOf,
+        params: meta.lpAddress,
+        chain,
+        block: ethBlock
+    })).output;
+    const underlyingLpBalanceBN = new BigNumber(underlyingLpBalance);
+    const underlyingTvl = poolSupplyBN.multipliedBy(underlyingLpBalanceBN).div(lpTotalSupplyBN);
+
+    tvl.push([meta.underlying[i], underlyingTvl.integerValue().toFixed()]);
     return tvl;
 }
 
@@ -522,28 +544,12 @@ async function chainTvl(chain, chainBlocks) {
     const transform = addr => `${chain}:${addr}`
     const block = chainBlocks[chain]
     for (const staking of stakingInfo[chain]) {
-        console.log(JSON.stringify(staking))
-        if (staking.tvl === stakingTvl) {
-            console.log("stakingTvl")
-        }
-        if (staking.tvl === lpStakingTvl) {
-            console.log("lpStakingTvl")
-        }
-        if (staking.tvl === crvStakingTvl) {
-            console.log("crvStakingTvl")
-        }
-        if (staking.tvl === clusterTvl) {
-            console.log("clusterTvl")
-        }
-        const sTvl = await staking.tvl(chain, staking.meta, block)
-        console.log("sTvl", JSON.stringify(sTvl))
-        if (typeof sTvl === 'string') {
-            console.log("add single")
-            sdk.util.sumSingleBalance(tvl, transform(staking.meta.tokenAddress), sTvl)
+        const stakingTvl = await staking.tvl(chain, staking.meta, block)
+        if (typeof stakingTvl === 'string') {
+            sdk.util.sumSingleBalance(tvl, transform(staking.meta.tokenAddress), stakingTvl)
         } else {
-            console.log("add multiple")
-            for (let i = 0; i < sTvl.length; i++) {
-                sdk.util.sumSingleBalance(tvl, transform(sTvl[i][0]), sTvl[i][1])
+            for (let i = 0; i < stakingTvl.length; i++) {
+                sdk.util.sumSingleBalance(tvl, transform(stakingTvl[i][0]), stakingTvl[i][1])
             }
         }
     }
