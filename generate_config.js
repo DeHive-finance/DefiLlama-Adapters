@@ -30,7 +30,7 @@ const { returnDecimals } = require("./projects/helper/utils");
     return dehiveConstants.address[getDehiveNetworkName(networkId)][assetName];
   }
 
-  configResult += "const stakingInfo = {\n";
+  configResult += "module.exports = {\n";
 
   for (let n = 0; n < supportedNetworksIds.length; n++) {
     let networkId = supportedNetworksIds[n];
@@ -45,11 +45,6 @@ const { returnDecimals } = require("./projects/helper/utils");
       let tvlName = "unknown";
       switch (staking.type) {
         case "cluster": {
-          // // DECR
-          // meta: {
-          //   clusterAddress: '0x6Bc3F65Fc50E49060e21eD6996be96ee4B404752',
-          // },
-          // tvl: clusterTvl
           body = "{\n";
           body += "clusterAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
           body += "},\n";
@@ -62,32 +57,6 @@ const { returnDecimals } = require("./projects/helper/utils");
         }
         case "lp":
         case "impulse": {
-
-          /// ///////impulse///////////
-          // // USDC/Quick
-          // meta: {
-          //   stakingAddress: '0xf4feb23531EdBe471a4493D432f8BB29Bf0A3868',
-          //     lpAddress: '0x1F1E4c845183EF6d50E9609F16f6f9cAE43BC9Cb',
-          //     underlying: [
-          //     '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
-          //     '0x831753DD7087CaC61aB5644b308642cc1c33Dc13'
-          //   ],
-          //     poolId: 2
-          // },
-          // tvl: lpStakingTvl
-
-          ////////lp////////////////
-          // meta: {
-          //   stakingAddress: '0x4964B3B599B82C3FdDC56e3A9Ffd77d48c6AF0f0',
-          //     lpAddress: '0x60c5BF43140d6341bebFE13293567FafBe01D65b',
-          //     underlying: [
-          //     '0x62Dc4817588d53a056cBbD18231d91ffCcd34b2A',
-          //     '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
-          //   ],
-          //     poolId: 0
-          // },
-          // tvl: lpStakingTvl
-
           body = "{\n";
           body += "stakingAddress: '" + getAssetAddress(networkId, staking.stakingContractSymbol) + "', // " + staking.stakingContractSymbol + "\n";
           body += "lpAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
@@ -113,14 +82,6 @@ const { returnDecimals } = require("./projects/helper/utils");
           break;
         }
         case "solo": {
-          // // DHV
-          // meta: {
-          //   stakingAddress: '0x04595f9010F79422a9b411ef963e4dd1F7107704',
-          //     tokenAddress: '0x62Dc4817588d53a056cBbD18231d91ffCcd34b2A',
-          //     poolId: 0,
-          // },
-          // tvl: stakingTvl
-
           body = "{\n";
           body += "stakingAddress: '" + getAssetAddress(networkId, staking.stakingContractSymbol) + "', // " + staking.stakingContractSymbol + "\n";
           body += "tokenAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
@@ -132,7 +93,7 @@ const { returnDecimals } = require("./projects/helper/utils");
       }
 
       body = "{//" + staking.displayName + " (" + staking.type + ")\n"
-        + "meta: " + body + "tvL: " + tvlName + "\n" + "},\n";
+        + "meta: " + body + "tvl: \"" + tvlName + "\"\n" + "},\n";
       if (!skipRecord) {
         allStakingPoolBody += body;
       }
@@ -143,7 +104,7 @@ const { returnDecimals } = require("./projects/helper/utils");
     configResult += networkBody;
   }
 
-  configResult += "}\n";
+  configResult += "};\n";
 
   console.log(configResult);
 })();
