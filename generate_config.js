@@ -60,6 +60,7 @@ const { returnDecimals } = require("./projects/helper/utils");
           body = "{\n";
           body += "stakingAddress: '" + getAssetAddress(networkId, staking.stakingContractSymbol) + "', // " + staking.stakingContractSymbol + "\n";
           body += "lpAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
+          body += "dhvToken: '" + getAssetAddress(networkId, "DHV") + "',\n";
           if (!!staking.underlyingTickers) {
             body += "underlying: [\n";
             for (let u of staking.underlyingTickers) {
