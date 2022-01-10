@@ -57,21 +57,17 @@ async function lpStakingMultipleTvl(chain, meta, ethBlock) {
         chain,
         block: ethBlock
     })).output;
-    const poolSupplyBN = new BigNumber(poolSupply);
 
-    const tvl = 0;
-    const underlyingLpBalance = (await sdk.api.abi.call({
+    const assetTotalBalance = (await sdk.api.abi.call({
         target: assetToken,
         abi: abi.balanceOf,
-        params: meta.lpAddress,
+        params: meta.stakingAddress,
         chain,
         block: ethBlock
     })).output;
-    const underlyingLpBalanceBN = new BigNumber(underlyingLpBalance);
-    const underlyingTvl = poolSupplyBN.multipliedBy(underlyingLpBalanceBN).div(lpTotalSupplyBN);
+    const assetTotalBalanceBN = new BigNumber(assetTotalBalance);
 
-    tvl.push([meta.underlying[i], underlyingTvl.integerValue().toFixed()]);
-    return tvl;
+    return assetTotalBalanceBN.integerValue().toFixed();
 }
 
 async function crvStakingTvl(chain, meta, ethBlock) {
@@ -88,7 +84,7 @@ async function crvStakingTvl(chain, meta, ethBlock) {
         abi: abi.listUnderlying,
         chain,
         block: ethBlock
-    })).output
+    })).output;
 
     const priceInUnderlying = (await sdk.api.abi.call({
         target: meta.strategyAddress,
@@ -151,6 +147,9 @@ async function chainTvl(chain, chainBlocks) {
                 break;
             case "clusterTvl":
                 stakingTvlFunction = clusterTvl;
+                break;
+            default:
+                console.log('staking', JSON.stringify(staking, null,4));
                 break;
         }
         const tvls = await stakingTvlFunction(chain, staking.meta, block);
