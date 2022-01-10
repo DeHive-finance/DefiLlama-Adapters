@@ -75,6 +75,7 @@ const { returnDecimals } = require("./projects/helper/utils");
         case "impulse-multiple": {
           body = "{\n";
           body += "stakingAddress: '" + getAssetAddress(networkId, staking.stakingContractSymbol) + "', // " + staking.stakingContractSymbol + "\n";
+          body += "lpAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
           body += "poolId: " + staking.pid + "\n";
           body += "},\n";
           tvlName = "crvStakingTvl";
