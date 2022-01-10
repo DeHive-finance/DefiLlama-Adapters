@@ -5,7 +5,6 @@ const abi = require('./abi.json')
 const stakingInfo = require("./stakingInfo");
 
 async function stakingTvl(chain, meta, ethBlock) {
-    console.log('stakingTvl', chain, JSON.stringify(meta, null, 4));
     return (await sdk.api.abi.call({
         target: meta.stakingAddress,
         abi: abi.poolInfo,
@@ -16,7 +15,6 @@ async function stakingTvl(chain, meta, ethBlock) {
 }
 
 async function stakingDhvTvl(chain, meta, ethBlock) {
-    console.log('stakingDhvTvl', chain, JSON.stringify(meta, null, 4));
     return (await sdk.api.abi.call({
         target: meta.tokenAddress,
         abi: abi.balanceOf,
@@ -27,7 +25,6 @@ async function stakingDhvTvl(chain, meta, ethBlock) {
 }
 
 async function lpStakingTvl(chain, meta, ethBlock) {
-    console.log('lpStakingTvl', chain, JSON.stringify(meta, null, 4));
     const { poolSupply } = (await sdk.api.abi.call({
         target: meta.stakingAddress,
         abi: abi.poolInfo,
@@ -74,7 +71,6 @@ async function lpStakingTvl(chain, meta, ethBlock) {
 }
 
 async function crvStakingTvl(chain, meta, ethBlock) {
-    console.log('crvStakingTvl', chain, JSON.stringify(meta, null, 4));
     const { poolSupply } = (await sdk.api.abi.call({
         target: meta.stakingAddress,
         abi: abi.poolInfo,
