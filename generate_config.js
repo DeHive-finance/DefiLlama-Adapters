@@ -43,6 +43,11 @@ const { returnDecimals } = require("./projects/helper/utils");
       const staking = stackingMeta[k];
       let body = "{},\n";
       let tvlName = "unknown";
+      if (staking.type === "impulse"
+        && getAssetAddress(networkId, staking.stakingContractSymbol) === "0xf4feb23531EdBe471a4493D432f8BB29Bf0A3868"
+        && staking.pid === 3) {
+        continue;
+      }
       switch (staking.type) {
         case "cluster": {
           body = "{\n";
@@ -98,6 +103,12 @@ const { returnDecimals } = require("./projects/helper/utils");
           }
           break;
         }
+      }
+
+      if (staking.type === "impulse"
+        && getAssetAddress(networkId, staking.stakingContractSymbol) === "0xf4feb23531EdBe471a4493D432f8BB29Bf0A3868"
+        && staking.pid === 3) {
+        skipRecord = true;
       }
 
       body = "{//" + staking.displayName + " (" + staking.type + ")\n"

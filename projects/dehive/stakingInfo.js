@@ -1,4 +1,4 @@
-// Auto generated at 11-1-2022 13:21
+// Auto generated at 11-1-2022 14:14
 module.exports = {
   'ethereum' : [
     {//DHV (solo)
@@ -87,19 +87,6 @@ module.exports = {
           '0x831753DD7087CaC61aB5644b308642cc1c33Dc13', // QCK-USDC-QUICK
         ],
         poolId: 2
-      },
-      tvl: "impulseStakingTvl"
-    },
-    {//USDC/MATIC (impulse)
-      meta: {
-        stakingAddress: '0xf4feb23531EdBe471a4493D432f8BB29Bf0A3868', // ImpulseStaking
-        lpAddress: '0x6e7a5FAFcec6BB1e78bAE2A1F0B612012BF14827', // QCK-USDC-WMATIC
-        dhvToken: '0x5fCB9de282Af6122ce3518CDe28B7089c9F97b26',
-        underlying: [
-          '0x2791bca1f2de4661ed88a30c99a7a9449aa84174', // QCK-USDC-WMATIC
-          '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270', // QCK-USDC-WMATIC
-        ],
-        poolId: 3
       },
       tvl: "impulseStakingTvl"
     },
