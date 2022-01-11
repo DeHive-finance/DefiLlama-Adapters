@@ -1,4 +1,4 @@
-// Auto generated at 11-1-2022 11:25
+// Auto generated at 11-1-2022 13:21
 module.exports = {
 'ethereum' : [
 {//DHV (solo)
@@ -62,7 +62,7 @@ underlying: [
 ],
 poolId: 0
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//WETH/DAI (impulse)
 meta: {
@@ -75,7 +75,7 @@ underlying: [
 ],
 poolId: 1
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//USDC/QUICK (impulse)
 meta: {
@@ -88,7 +88,7 @@ underlying: [
 ],
 poolId: 2
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//USDC/MATIC (impulse)
 meta: {
@@ -101,7 +101,7 @@ underlying: [
 ],
 poolId: 3
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//USDT/MAI (impulse)
 meta: {
@@ -114,7 +114,7 @@ underlying: [
 ],
 poolId: 4
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//AVAX/WETH (impulse)
 meta: {
@@ -127,7 +127,7 @@ underlying: [
 ],
 poolId: 5
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//WMATIC/WETH (impulse)
 meta: {
@@ -140,7 +140,7 @@ underlying: [
 ],
 poolId: 6
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//CRV/WETH (impulse)
 meta: {
@@ -153,7 +153,7 @@ underlying: [
 ],
 poolId: 7
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//SNX/WETH (impulse)
 meta: {
@@ -166,7 +166,7 @@ underlying: [
 ],
 poolId: 8
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//WMATIC/GHST (impulse)
 meta: {
@@ -179,7 +179,7 @@ underlying: [
 ],
 poolId: 9
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 ],
 'bsc' : [
@@ -221,7 +221,7 @@ underlying: [
 ],
 poolId: 0
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//USDT/USDC (impulse)
 meta: {
@@ -234,7 +234,7 @@ underlying: [
 ],
 poolId: 1
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//USDT/WBNB (impulse)
 meta: {
@@ -247,7 +247,7 @@ underlying: [
 ],
 poolId: 2
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//XVS/WBNB (impulse)
 meta: {
@@ -260,7 +260,7 @@ underlying: [
 ],
 poolId: 3
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//ALPACA/BUSD (impulse)
 meta: {
@@ -273,7 +273,7 @@ underlying: [
 ],
 poolId: 4
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//LINK/WBNB (impulse)
 meta: {
@@ -286,7 +286,7 @@ underlying: [
 ],
 poolId: 5
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//CAKE/USDT (impulse)
 meta: {
@@ -299,7 +299,7 @@ underlying: [
 ],
 poolId: 6
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//DODO/WBNB (impulse)
 meta: {
@@ -312,7 +312,7 @@ underlying: [
 ],
 poolId: 7
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//BANANA/WBNB (impulse)
 meta: {
@@ -325,7 +325,7 @@ underlying: [
 ],
 poolId: 8
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//BANANA/BUSD (impulse)
 meta: {
@@ -338,7 +338,7 @@ underlying: [
 ],
 poolId: 9
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//TWT/WBNB (impulse)
 meta: {
@@ -351,7 +351,7 @@ underlying: [
 ],
 poolId: 10
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 {//AVAX/WBNB (impulse)
 meta: {
@@ -364,7 +364,7 @@ underlying: [
 ],
 poolId: 11
 },
-tvl: "lpStakingTvl"
+tvl: "impulseStakingTvl"
 },
 ],
 'xdai' : [

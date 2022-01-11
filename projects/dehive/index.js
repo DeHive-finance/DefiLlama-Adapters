@@ -104,6 +104,43 @@ async function crvStakingTvl(chain, meta, ethBlock) {
     return underlyingList.map((_, i) => [underlyingList[i], underlyingAmount[i]]);
 }
 
+async function impulseStakingTvl(chain, meta, ethBlock) {
+    const { strategy } = (await sdk.api.abi.call({
+        target: meta.stakingAddress,
+        abi: abi.impulseMultiPoolInfo,
+        params: meta.poolId,
+        chain,
+        block: ethBlock
+    })).output;
+
+    const wantLockedTotal = (await sdk.api.abi.call({
+        target: strategy,
+        abi: abi.wantLockedTotal,
+        chain,
+        block: ethBlock
+    })).output;
+
+    const usdToken = (await sdk.api.abi.call({
+        target: strategy,
+        abi: abi.usdToken,
+        chain,
+        block: ethBlock
+    })).output;
+
+    const wantPrice = (await sdk.api.abi.call({
+        target: strategy,
+        abi: abi.wantPriceInUsd,
+        params: wantLockedTotal,
+        chain,
+        block: ethBlock
+    })).output;
+
+    let tvl = await lpStakingTvl(chain, meta, ethBlock); // from staking pool
+    tvl.push([usdToken, wantPrice]); // from strategy
+
+    return tvl;
+}
+
 // TODO
 // async function clusterStakingTvl(){}
 
@@ -155,11 +192,14 @@ async function chainTvl(chain, chainBlocks) {
             case "clusterTvl":
                 stakingTvlFunction = clusterTvl;
                 break;
+            case "impulseStakingTvl":
+                stakingTvlFunction = impulseStakingTvl;
+                break;
             default:
                 console.log('staking', JSON.stringify(staking, null,4));
                 break;
         }
-        const tvls = await stakingTvlFunction(chain, staking.meta, block);
+        const tvls = await stakingTvlFunction(chain, staking.meta, block).catch(()=>{console.log(chain, staking);return []});
         if (typeof tvls === 'string') {
             sdk.util.sumSingleBalance(tvl, transform(staking.meta.tokenAddress), tvls)
         } else {

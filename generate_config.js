@@ -55,8 +55,8 @@ const { returnDecimals } = require("./projects/helper/utils");
           skipRecord = true;
           break;
         }
-        case "lp":
-        case "impulse": {
+        case "impulse":
+        case "lp": {
           body = "{\n";
           body += "stakingAddress: '" + getAssetAddress(networkId, staking.stakingContractSymbol) + "', // " + staking.stakingContractSymbol + "\n";
           body += "lpAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
@@ -70,7 +70,11 @@ const { returnDecimals } = require("./projects/helper/utils");
           }
           body += "poolId: " + staking.pid + "\n";
           body += "},\n";
-          tvlName = "lpStakingTvl";
+          if (staking.type === "lp") {
+            tvlName = "lpStakingTvl";
+          } else {
+            tvlName = "impulseStakingTvl";
+          }
           break;
         }
         case "impulse-multiple": {

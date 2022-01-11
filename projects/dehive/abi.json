@@ -212,5 +212,37 @@
     ],
     "stateMutability": "view",
     "type": "function"
+  },
+  "wantPriceInUsd": {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_wantAmt",
+        "type": "uint256"
+      }
+    ],
+    "name": "wantPriceInUsd",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  "usdToken": {
+    "inputs": [],
+    "name": "usdToken",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   }
 }
