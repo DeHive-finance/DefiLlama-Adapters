@@ -199,8 +199,8 @@ async function chainTvl(chain, chainBlocks) {
                 stakingTvlFunction = impulseStakingTvl;
                 break;
             default:
-                console.log('staking', JSON.stringify(staking, null,4));
-                break;
+                console.log('unknown tvl type', JSON.stringify(staking, null,4));
+                continue;
         }
         const tvls = await stakingTvlFunction(chain, staking.meta, block).catch(()=>{console.log(chain, staking);return []});
         if (typeof tvls === 'string') {
