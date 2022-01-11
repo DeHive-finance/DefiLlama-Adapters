@@ -1,4 +1,4 @@
-// Auto generated at 10-1-2022 16:18
+// Auto generated at 11-1-2022 11:25
 module.exports = {
   'ethereum' : [
     {//DHV (solo)
@@ -47,7 +47,6 @@ module.exports = {
     {//Curve pool (impulse-multiple)
       meta: {
         stakingAddress: '0xE6E6982fb5dDF4fcc74cCCe4e4eea774E002D17F', // ImpulseMultiStaking
-        lpAddress: '0xdad97f7713ae9437fa9249920ec8507e5fbb23d3', // CRV-DAI-USDC-USDT-WBTC-WETH
         poolId: 0
       },
       tvl: "crvStakingTvl"

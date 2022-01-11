@@ -71,30 +71,37 @@ async function lpStakingTvl(chain, meta, ethBlock) {
 }
 
 async function crvStakingTvl(chain, meta, ethBlock) {
-    const { poolSupply } = (await sdk.api.abi.call({
+    const { strategy } = (await sdk.api.abi.call({
         target: meta.stakingAddress,
-        abi: abi.poolInfo,
+        abi: abi.impulseMultiPoolInfo,
         params: meta.poolId,
         chain,
         block: ethBlock
     })).output;
 
+    const wantLockedTotal = (await sdk.api.abi.call({
+        target: strategy,
+        abi: abi.wantLockedTotal,
+        chain,
+        block: ethBlock
+    })).output;
+
     const underlyingList = (await sdk.api.abi.call({
-        target: meta.stakingAddress,
+        target: strategy,
         abi: abi.listUnderlying,
         chain,
         block: ethBlock
     })).output;
 
-    const priceInUnderlying = (await sdk.api.abi.call({
-        target: meta.stakingAddress,
+    const underlyingAmount = (await sdk.api.abi.call({
+        target: strategy,
         abi: abi.wantPriceInUnderlying,
-        params: poolSupply,
+        params: wantLockedTotal,
         chain,
         block: ethBlock
     })).output;
 
-    return underlyingList.map((_, i) => [underlyingList[i], priceInUnderlying[i]]);
+    return underlyingList.map((_, i) => [underlyingList[i], underlyingAmount[i]]);
 }
 
 // TODO
@@ -152,7 +159,7 @@ async function chainTvl(chain, chainBlocks) {
                 console.log('staking', JSON.stringify(staking, null,4));
                 break;
         }
-        const tvls = await stakingTvlFunction(chain, staking.meta, block);
+        const tvls = await stakingTvlFunction(chain, staking.meta, block).catch(()=>{console.log(chain, staking);return []});
         if (typeof tvls === 'string') {
             sdk.util.sumSingleBalance(tvl, transform(staking.meta.tokenAddress), tvls)
         } else {
