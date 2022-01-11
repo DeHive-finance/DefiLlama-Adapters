@@ -159,7 +159,7 @@ async function chainTvl(chain, chainBlocks) {
                 console.log('staking', JSON.stringify(staking, null,4));
                 break;
         }
-        const tvls = await stakingTvlFunction(chain, staking.meta, block).catch(()=>{console.log(chain, staking);return []});
+        const tvls = await stakingTvlFunction(chain, staking.meta, block);
         if (typeof tvls === 'string') {
             sdk.util.sumSingleBalance(tvl, transform(staking.meta.tokenAddress), tvls)
         } else {
