@@ -105,6 +105,9 @@ async function crvStakingTvl(chain, meta, ethBlock) {
 }
 
 async function impulseStakingTvl(chain, meta, ethBlock) {
+    if (chain === 'bsc') {
+        return await lpStakingTvl(chain, meta, ethBlock); // from staking pool
+    }
     const { strategy } = (await sdk.api.abi.call({
         target: meta.stakingAddress,
         abi: abi.impulseMultiPoolInfo,
