@@ -69,7 +69,7 @@ const { returnDecimals } = require("./projects/helper/utils");
           if (!!staking.underlyingTickers) {
             body += "underlying: [\n";
             for (let u of staking.underlyingTickers) {
-              body += "'" + getAssetAddress(networkId, u) + "', // " + staking.asset + "\n";
+              body += "'" + getAssetAddress(networkId, u) + "', // " + u + "\n";
             }
             body += "],\n";
           }
