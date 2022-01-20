@@ -123,6 +123,7 @@ const dehiveAdapter = require("./dehive-adapter");
     let skipRecord = false;
 
     for (let k of Object.keys(stackingMeta)) {
+      const recordName = k;
       const staking = stackingMeta[k];
       let body = "{},\n";
       let tvlName = "unknown";
@@ -152,7 +153,7 @@ const dehiveAdapter = require("./dehive-adapter");
           if (!!staking.underlyingTickers) {
             body += "underlying: [\n";
             for (let u of staking.underlyingTickers) {
-              body += "'" + getAssetAddress(networkId, u) + "', // " + staking.asset + "\n";
+              body += "'" + getAssetAddress(networkId, u) + "', // " + u + "\n";
             }
             body += "],\n";
           }
@@ -271,10 +272,11 @@ const dehiveAdapter = require("./dehive-adapter");
 
         fullList.push({
           "networkId": networkId,
-          "symbol": staking.asset,
+          "symbol": recordName,
           "tvl": totalTvl,
+          "type": staking.type
         })
-        console.log("networkId", networkId, "staking.asset", staking.asset, "totalTvl", totalTvl);
+        console.log("networkId", networkId, "staking.asset", recordName, "totalTvl", totalTvl);
       })();
     }
   }

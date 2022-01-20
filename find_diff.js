@@ -1,223 +1,67 @@
 const fromBack = [
   {
-    "id": 2,
-    "networkId": 1,
-    "symbol": "UNI-DHV-WETH",
-    "tvl": 208355.73,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:04.395651 +00:00"
-  },
-  {
-    "id": 27,
-    "networkId": 56,
-    "symbol": "DODO-WBNB-IMPULSE",
-    "tvl": 45.83,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:06.809702 +00:00"
-  },
-  {
-    "id": 17,
+    "id": 3,
     "networkId": 137,
-    "symbol": "QCK-DHV-QUICK-NEW",
-    "tvl": 150.72,
-    "apr": null,
-    "apy": null,
+    "symbol": "DGAME",
+    "decimals": 18,
+    "tvl": 14785.11,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:08.630047 +00:00"
+    "updatedAt": "2022-01-20 08:10:00.809638 +00:00"
   },
   {
     "id": 4,
-    "networkId": 137,
-    "symbol": "DPOL",
-    "tvl": 49230.54,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:09.553140 +00:00"
-  },
-  {
-    "id": 28,
-    "networkId": 56,
-    "symbol": "BANANA-WBNB-IMPULSE",
-    "tvl": 155.12,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:39:17.775000 +00:00"
-  },
-  {
-    "id": 31,
-    "networkId": 56,
-    "symbol": "AVAX-WBNB-IMPULSE",
-    "tvl": 0.00,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:12.553979 +00:00"
-  },
-  {
-    "id": 25,
-    "networkId": 56,
-    "symbol": "LINK-WBNB-IMPULSE",
-    "tvl": 0.00,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:14.938327 +00:00"
-  },
-  {
-    "id": 32,
     "networkId": 56,
     "symbol": "DBSC",
-    "tvl": 36746.84,
-    "apr": null,
-    "apy": null,
+    "decimals": 18,
+    "tvl": 38985.34,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:16.110024 +00:00"
-  },
-  {
-    "id": 11,
-    "networkId": 137,
-    "symbol": "MAI-USDT-IMPULSE",
-    "tvl": 19826.59,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:39:21.351000 +00:00"
-  },
-  {
-    "id": 3,
-    "networkId": 137,
-    "symbol": "DHV",
-    "tvl": 130343.56,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:42:10.219430 +00:00"
-  },
-  {
-    "id": 10,
-    "networkId": 137,
-    "symbol": "USDC-MATIC-IMPULSE",
-    "tvl": 1206.37,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:39:22.704000 +00:00"
-  },
-  {
-    "id": 13,
-    "networkId": 137,
-    "symbol": "WMATIC-WETH-IMPULSE",
-    "tvl": 2155.68,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:17.673521 +00:00"
-  },
-  {
-    "id": 19,
-    "networkId": 56,
-    "symbol": "DHV",
-    "tvl": 112669.56,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:18.167558 +00:00"
-  },
-  {
-    "id": 22,
-    "networkId": 56,
-    "symbol": "BUSDT-WBNB-IMPULSE",
-    "tvl": 5.35,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:35.729760 +00:00"
-  },
-  {
-    "id": 36,
-    "networkId": 100,
-    "symbol": "DXIN",
-    "tvl": 39372.24,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:36.707036 +00:00"
-  },
-  {
-    "id": 33,
-    "networkId": 56,
-    "symbol": "PANCAKE-DHV-BUSD",
-    "tvl": 90766.05,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:40.064759 +00:00"
-  },
-  {
-    "id": 9,
-    "networkId": 137,
-    "symbol": "USDC-QUICK-IMPULSE",
-    "tvl": 838.83,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:36:25.225000 +00:00"
-  },
-  {
-    "id": 34,
-    "networkId": 100,
-    "symbol": "DHV",
-    "tvl": 42044.09,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:40.520846 +00:00"
-  },
-  {
-    "id": 16,
-    "networkId": 137,
-    "symbol": "WMATIC-GHST-IMPULSE",
-    "tvl": 2787.01,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:42:13.121902 +00:00"
-  },
-  {
-    "id": 8,
-    "networkId": 137,
-    "symbol": "WETH-DAI-IMPULSE",
-    "tvl": 1814.19,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:46.729870 +00:00"
+    "updatedAt": "2022-01-20 08:10:01.760075 +00:00"
   },
   {
     "id": 5,
-    "networkId": 137,
-    "symbol": "DGAME",
-    "tvl": 12430.48,
-    "apr": null,
-    "apy": null,
+    "networkId": 100,
+    "symbol": "DXIN",
+    "decimals": 18,
+    "tvl": 38820.62,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:42:13.913111 +00:00"
+    "updatedAt": "2022-01-20 08:10:02.604339 +00:00"
   },
   {
-    "id": 7,
+    "id": 6,
+    "networkId": 100,
+    "symbol": "DXDC",
+    "decimals": 18,
+    "tvl": 90915.39,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:03.780589 +00:00"
+  },
+  {
+    "id": 1,
+    "networkId": 1,
+    "symbol": "DECR",
+    "decimals": 18,
+    "tvl": 3925.02,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:05.870683 +00:00"
+  },
+  {
+    "id": 2,
     "networkId": 137,
-    "symbol": "DHV-QUICK-IMPULSE",
-    "tvl": 138.27,
+    "symbol": "DPOL",
+    "decimals": 18,
+    "tvl": 47196.14,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:06.592526 +00:00"
+  },
+  {
+    "id": 15,
+    "networkId": 137,
+    "symbol": "SNX-WETH-IMPULSE",
+    "tvl": 1274.16,
     "apr": null,
     "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:48.262703 +00:00"
+    "updatedAt": "2022-01-20 08:10:26.517228 +00:00"
   },
   {
     "id": 30,
@@ -227,57 +71,57 @@ const fromBack = [
     "apr": null,
     "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:39:25.423000 +00:00"
+    "updatedAt": "2022-01-20 08:10:29.657759 +00:00"
   },
   {
-    "id": 20,
-    "networkId": 56,
-    "symbol": "CAKE-BUSD-IMPULSE",
-    "tvl": 8.84,
+    "id": 34,
+    "networkId": 100,
+    "symbol": "DHV",
+    "tvl": 40677.82,
     "apr": null,
     "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:51.826606 +00:00"
-  },
-  {
-    "id": 12,
-    "networkId": 137,
-    "symbol": "AVAX-WETH-IMPULSE",
-    "tvl": 2210.06,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:53.396653 +00:00"
+    "updatedAt": "2022-01-20 08:10:30.121851 +00:00"
   },
   {
     "id": 1,
     "networkId": 1,
     "symbol": "DHV",
-    "tvl": 135967.33,
+    "tvl": 131977.57,
     "apr": null,
     "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:54.451335 +00:00"
+    "updatedAt": "2022-01-20 08:10:30.931644 +00:00"
   },
   {
-    "id": 23,
+    "id": 21,
     "networkId": 56,
-    "symbol": "XVS-WBNB-IMPULSE",
-    "tvl": 7.47,
+    "symbol": "BUSDT-USDC-IMPULSE",
+    "tvl": 109.48,
     "apr": null,
     "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:57.663674 +00:00"
+    "updatedAt": "2022-01-20 08:10:33.555530 +00:00"
   },
   {
-    "id": 18,
-    "networkId": 137,
-    "symbol": "CRV-IMPULSE",
-    "tvl": 1776.52,
+    "id": 27,
+    "networkId": 56,
+    "symbol": "DODO-WBNB-IMPULSE",
+    "tvl": 44.46,
     "apr": null,
     "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:43:58.405899 +00:00"
+    "updatedAt": "2022-01-20 08:10:35.336294 +00:00"
+  },
+  {
+    "id": 13,
+    "networkId": 137,
+    "symbol": "WMATIC-WETH-IMPULSE",
+    "tvl": 2050.06,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:36.888694 +00:00"
   },
   {
     "id": 29,
@@ -287,17 +131,247 @@ const fromBack = [
     "apr": null,
     "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:41:54.337000 +00:00"
+    "updatedAt": "2022-01-20 08:10:39.263602 +00:00"
+  },
+  {
+    "id": 9,
+    "networkId": 137,
+    "symbol": "USDC-QUICK-IMPULSE",
+    "tvl": 847.06,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:40.535785 +00:00"
+  },
+  {
+    "id": 19,
+    "networkId": 56,
+    "symbol": "DHV",
+    "tvl": 105156.41,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:41.508222 +00:00"
+  },
+  {
+    "id": 25,
+    "networkId": 56,
+    "symbol": "LINK-WBNB-IMPULSE",
+    "tvl": 0.00,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:43.844754 +00:00"
+  },
+  {
+    "id": 35,
+    "networkId": 100,
+    "symbol": "HONEY-DHV-WXDAI",
+    "tvl": 18486.84,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:47.041260 +00:00"
+  },
+  {
+    "id": 37,
+    "networkId": 100,
+    "symbol": "DXDC",
+    "tvl": 90087.45,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:47.952054 +00:00"
+  },
+  {
+    "id": 6,
+    "networkId": 137,
+    "symbol": "QCK-DHV-QUICK",
+    "tvl": 92.91,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:49.899789 +00:00"
+  },
+  {
+    "id": 12,
+    "networkId": 137,
+    "symbol": "AVAX-WETH-IMPULSE",
+    "tvl": 2121.28,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:57.561749 +00:00"
+  },
+  {
+    "id": 17,
+    "networkId": 137,
+    "symbol": "QCK-DHV-QUICK-NEW",
+    "tvl": 147.70,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:11:02.050155 +00:00"
+  },
+  {
+    "id": 14,
+    "networkId": 137,
+    "symbol": "CRV-WETH-IMPULSE",
+    "tvl": 2222.69,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:11:03.907809 +00:00"
+  },
+  {
+    "id": 28,
+    "networkId": 56,
+    "symbol": "BANANA-WBNB-IMPULSE",
+    "tvl": 111.59,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:11:06.617452 +00:00"
+  },
+  {
+    "id": 33,
+    "networkId": 56,
+    "symbol": "PANCAKE-DHV-BUSD",
+    "tvl": 89658.39,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:11:10.277556 +00:00"
+  },
+  {
+    "id": 10,
+    "networkId": 137,
+    "symbol": "USDC-MATIC-IMPULSE",
+    "tvl": 1208.08,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:11:11.616595 +00:00"
+  },
+  {
+    "id": 32,
+    "networkId": 56,
+    "symbol": "DBSC",
+    "tvl": 37834.79,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:01.809739 +00:00"
+  },
+  {
+    "id": 4,
+    "networkId": 137,
+    "symbol": "DPOL",
+    "tvl": 45177.68,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:02.472672 +00:00"
+  },
+  {
+    "id": 31,
+    "networkId": 56,
+    "symbol": "AVAX-WBNB-IMPULSE",
+    "tvl": 0.00,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:06.452086 +00:00"
   },
   {
     "id": 24,
     "networkId": 56,
     "symbol": "ALPACA-BUSD-IMPULSE",
-    "tvl": 2.03,
+    "tvl": 1.97,
     "apr": null,
     "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:41:57.255000 +00:00"
+    "updatedAt": "2022-01-20 08:10:09.629499 +00:00"
+  },
+  {
+    "id": 16,
+    "networkId": 137,
+    "symbol": "WMATIC-GHST-IMPULSE",
+    "tvl": 2656.91,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:11.077928 +00:00"
+  },
+  {
+    "id": 22,
+    "networkId": 56,
+    "symbol": "BUSDT-WBNB-IMPULSE",
+    "tvl": 5.38,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:13.165984 +00:00"
+  },
+  {
+    "id": 8,
+    "networkId": 137,
+    "symbol": "WETH-DAI-IMPULSE",
+    "tvl": 1797.84,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:14.777884 +00:00"
+  },
+  {
+    "id": 5,
+    "networkId": 137,
+    "symbol": "DGAME",
+    "tvl": 11960.57,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:16.041725 +00:00"
+  },
+  {
+    "id": 36,
+    "networkId": 100,
+    "symbol": "DXIN",
+    "tvl": 38817.45,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:10:16.927514 +00:00"
+  },
+  {
+    "id": 20,
+    "networkId": 56,
+    "symbol": "CAKE-BUSD-IMPULSE",
+    "tvl": 8.85,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:11:14.031846 +00:00"
+  },
+  {
+    "id": 11,
+    "networkId": 137,
+    "symbol": "MAI-USDT-IMPULSE",
+    "tvl": 19876.75,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:11:15.633053 +00:00"
+  },
+  {
+    "id": 3,
+    "networkId": 137,
+    "symbol": "DHV",
+    "tvl": 125261.56,
+    "apr": null,
+    "apy": null,
+    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+    "updatedAt": "2022-01-20 08:11:16.028005 +00:00"
   },
   {
     "id": 26,
@@ -307,163 +381,270 @@ const fromBack = [
     "apr": null,
     "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:42:16.319416 +00:00"
+    "updatedAt": "2022-01-20 08:11:18.447706 +00:00"
   },
   {
-    "id": 37,
-    "networkId": 100,
-    "symbol": "DXDC",
-    "tvl": 76406.88,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:39:26.311000 +00:00"
-  },
-  {
-    "id": 15,
+    "id": 7,
     "networkId": 137,
-    "symbol": "SNX-WETH-IMPULSE",
-    "tvl": 1300.08,
+    "symbol": "DHV-QUICK-IMPULSE",
+    "tvl": 135.48,
     "apr": null,
     "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:42:17.689813 +00:00"
+    "updatedAt": "2022-01-20 08:11:19.817781 +00:00"
   },
   {
-    "id": 35,
-    "networkId": 100,
-    "symbol": "HONEY-DHV-WXDAI",
-    "tvl": 17303.97,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:36:28.115000 +00:00"
-  },
-  {
-    "id": 6,
+    "id": 18,
     "networkId": 137,
-    "symbol": "QCK-DHV-QUICK",
-    "tvl": 94.71,
+    "symbol": "CRV-IMPULSE",
+    "tvl": 1757.34,
     "apr": null,
     "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:42:19.350108 +00:00"
-  },
-  {
-    "id": 14,
-    "networkId": 137,
-    "symbol": "CRV-WETH-IMPULSE",
-    "tvl": 2421.77,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:42:20.724412 +00:00"
-  },
-  {
-    "id": 21,
-    "networkId": 56,
-    "symbol": "BUSDT-USDC-IMPULSE",
-    "tvl": 139.37,
-    "apr": null,
-    "apy": null,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 14:41:03.520964 +00:00"
-  },
-  {
-    "id": 6,
-    "networkId": 100,
-    "symbol": "DXDC",
-    "decimals": 18,
-    "tvl": 77409.45,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 15:14:00.969131 +00:00"
-  },
-  {
-    "id": 1,
-    "networkId": 1,
-    "symbol": "DECR",
-    "decimals": 18,
-    "tvl": 4347.46,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 15:14:02.601608 +00:00"
+    "updatedAt": "2022-01-20 08:11:20.473472 +00:00"
   },
   {
     "id": 2,
-    "networkId": 137,
-    "symbol": "DPOL",
-    "decimals": 18,
-    "tvl": 52790.79,
+    "networkId": 1,
+    "symbol": "UNI-DHV-WETH",
+    "tvl": 202220.48,
+    "apr": null,
+    "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 15:14:03.536138 +00:00"
+    "updatedAt": "2022-01-20 08:10:21.326536 +00:00"
   },
   {
-    "id": 3,
-    "networkId": 137,
-    "symbol": "DGAME",
-    "decimals": 18,
-    "tvl": 15121.19,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 15:14:04.411706 +00:00"
-  },
-  {
-    "id": 4,
+    "id": 23,
     "networkId": 56,
-    "symbol": "DBSC",
-    "decimals": 18,
-    "tvl": 38285.05,
+    "symbol": "XVS-WBNB-IMPULSE",
+    "tvl": 7.14,
+    "apr": null,
+    "apy": null,
     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 15:14:05.560784 +00:00"
-  },
-  {
-    "id": 5,
-    "networkId": 100,
-    "symbol": "DXIN",
-    "decimals": 18,
-    "tvl": 39883.76,
-    "createdAt": "2022-01-13 07:20:39.818857 +00:00",
-    "updatedAt": "2022-01-14 15:14:06.495080 +00:00"
+    "updatedAt": "2022-01-20 08:10:23.718150 +00:00"
   }
 ];
 
+const fromDefiLama =
 
-const fromDefiLama = [
-  { "networkId": 1, "symbol": "DHV", "tvl": 137871.74022836753 },
-  { "networkId": 1, "symbol": "UNI-DHV-WETH", "tvl": 348269.4778212785 },
-  { "networkId": 137, "symbol": "DHV", "tvl": 132169.19873462516 },
-  { "networkId": 137, "symbol": "DPOL", "tvl": 185369.33292701555 },
-  { "networkId": 137, "symbol": "DGAME", "tvl": 202006.58731139704 },
-  { "networkId": 137, "symbol": "CRV-DAI-USDC-USDT-WBTC-WETH", "tvl": 203799.66020712937 },
-  { "networkId": 137, "symbol": "QCK-DHV-QUICK", "tvl": 204088.71153854398 },
-  { "networkId": 137, "symbol": "QCK-WETH-DAI", "tvl": 207788.9053600617 },
-  { "networkId": 137, "symbol": "QCK-USDC-QUICK", "tvl": 211294.73799837424 },
-  { "networkId": 137, "symbol": "QCK-MAI-USDT", "tvl": 291813.7244360086 },
-  { "networkId": 137, "symbol": "SUSHI-AVAX-WETH", "tvl": 294228.0617346807 },
-  { "networkId": 137, "symbol": "SUSHI-WMATIC-WETH", "tvl": 298615.2644003752 },
-  { "networkId": 137, "symbol": "SUSHI-CRV-WETH", "tvl": 302332.44237023295 },
-  { "networkId": 137, "symbol": "SUSHI-SNX-WETH", "tvl": 304293.5480354227 },
-  { "networkId": 137, "symbol": "SUSHI-WMATIC-GHST", "tvl": 308621.68013074575 },
-  { "networkId": 137, "symbol": "QCK-DHV-QUICK", "tvl": 308629.9933357227 },
-  { "networkId": 137, "symbol": "QCK-DHV-QUICK", "tvl": 308664.39841145853 },
-  { "networkId": 56, "symbol": "DHV", "tvl": 114247.6517987576 },
-  { "networkId": 56, "symbol": "DBSC", "tvl": 152379.69605524937 },
-  { "networkId": 56, "symbol": "PANCAKE-DHV-BUSD", "tvl": 244261.95505124412 },
-  { "networkId": 56, "symbol": "PANCAKE-CAKE-BUSD", "tvl": 244270.90776654473 },
-  { "networkId": 56, "symbol": "PANCAKE-BUSDT-USDC", "tvl": 244411.66774958392 },
-  { "networkId": 56, "symbol": "PANCAKE-BUSDT-WBNB", "tvl": 244417.06156436948 },
-  { "networkId": 56, "symbol": "PANCAKE-XVS-WBNB", "tvl": 244424.59186873172 },
-  { "networkId": 56, "symbol": "PANCAKE-ALPACA-BUSD", "tvl": 244426.65112452864 },
-  { "networkId": 56, "symbol": "PANCAKE-LINK-WBNB", "tvl": 244426.6520504563 },
-  { "networkId": 56, "symbol": "PANCAKE-CAKE-BUSDT", "tvl": 244426.65205361482 },
-  { "networkId": 56, "symbol": "PANCAKE-DODO-WBNB", "tvl": 244473.17021744023 },
-  { "networkId": 56, "symbol": "APE-BANANA-WBNB", "tvl": 244628.64782735286 },
-  { "networkId": 56, "symbol": "APE-BANANA-BUSD", "tvl": 244628.6478108418 },
-  { "networkId": 56, "symbol": "APE-TWT-WBNB", "tvl": 244628.64783019116 },
-  { "networkId": 56, "symbol": "APE-AVAX-WBNB", "tvl": 244628.6478336398 },
-  { "networkId": 100, "symbol": "DHV", "tvl": 0 },
-  { "networkId": 100, "symbol": "DXIN", "tvl": 29068.069943164683 },
-  { "networkId": 100, "symbol": "DXDC", "tvl": 101029.11192606155 },
-  { "networkId": 100, "symbol": "HONEY-DHV-WXDAI", "tvl": 106573.16942178708 },
-];
+  [
+    {
+      "networkId": 1,
+      "symbol": "DHV",
+      "tvl": 134901.8477323993,
+      "type": "solo"
+    },
+    {
+      "networkId": 1,
+      "symbol": "UNI-DHV-WETH",
+      "tvl": 339500.28256121126,
+      "type": "lp"
+    },
+    {
+      "networkId": 137,
+      "symbol": "DHV",
+      "tvl": 128037.03032020103,
+      "type": "solo"
+    },
+    {
+      "networkId": 137,
+      "symbol": "DPOL",
+      "tvl": 176620.1970948635,
+      "type": "cluster"
+    },
+    {
+      "networkId": 137,
+      "symbol": "DGAME",
+      "tvl": 193256.08120438457,
+      "type": "cluster"
+    },
+    {
+      "networkId": 137,
+      "symbol": "CRV-IMPULSE",
+      "tvl": 195018.66564431696,
+      "type": "impulse-multiple"
+    },
+    {
+      "networkId": 137,
+      "symbol": "DHV-QUICK-IMPULSE",
+      "tvl": 195297.0260046063,
+      "type": "impulse"
+    },
+    {
+      "networkId": 137,
+      "symbol": "WETH-DAI-IMPULSE",
+      "tvl": 198918.21293990785,
+      "type": "impulse"
+    },
+    {
+      "networkId": 137,
+      "symbol": "USDC-QUICK-IMPULSE",
+      "tvl": 202393.30584432682,
+      "type": "impulse"
+    },
+    {
+      "networkId": 137,
+      "symbol": "MAI-USDT-IMPULSE",
+      "tvl": 282301.63596622384,
+      "type": "impulse"
+    },
+    {
+      "networkId": 137,
+      "symbol": "AVAX-WETH-IMPULSE",
+      "tvl": 284594.6921301504,
+      "type": "impulse"
+    },
+    {
+      "networkId": 137,
+      "symbol": "WMATIC-WETH-IMPULSE",
+      "tvl": 288690.08105749346,
+      "type": "impulse"
+    },
+    {
+      "networkId": 137,
+      "symbol": "CRV-WETH-IMPULSE",
+      "tvl": 292012.957430118,
+      "type": "impulse"
+    },
+    {
+      "networkId": 137,
+      "symbol": "SNX-WETH-IMPULSE",
+      "tvl": 293962.3143478906,
+      "type": "impulse"
+    },
+    {
+      "networkId": 137,
+      "symbol": "WMATIC-GHST-IMPULSE",
+      "tvl": 298014.4473746624,
+      "type": "impulse"
+    },
+    {
+      "networkId": 137,
+      "symbol": "QCK-DHV-QUICK",
+      "tvl": 297996.59631465795,
+      "type": "external"
+    },
+    {
+      "networkId": 137,
+      "symbol": "QCK-DHV-QUICK-NEW",
+      "tvl": 297989.415556045,
+      "type": "external"
+    },
+    {
+      "networkId": 56,
+      "symbol": "DHV",
+      "tvl": 107486.40494094291,
+      "type": "solo"
+    },
+    {
+      "networkId": 56,
+      "symbol": "DBSC",
+      "tvl": 146373.5229339986,
+      "type": "cluster"
+    },
+    {
+      "networkId": 56,
+      "symbol": "PANCAKE-DHV-BUSD",
+      "tvl": 237141.62805858394,
+      "type": "lp"
+    },
+    {
+      "networkId": 56,
+      "symbol": "CAKE-BUSD-IMPULSE",
+      "tvl": 237150.47603325447,
+      "type": "impulse"
+    },
+    {
+      "networkId": 56,
+      "symbol": "BUSDT-USDC-IMPULSE",
+      "tvl": 237259.9585602175,
+      "type": "impulse"
+    },
+    {
+      "networkId": 56,
+      "symbol": "BUSDT-WBNB-IMPULSE",
+      "tvl": 237265.31361767562,
+      "type": "impulse"
+    },
+    {
+      "networkId": 56,
+      "symbol": "XVS-WBNB-IMPULSE",
+      "tvl": 237272.39671067562,
+      "type": "impulse"
+    },
+    {
+      "networkId": 56,
+      "symbol": "ALPACA-BUSD-IMPULSE",
+      "tvl": 237274.36197801193,
+      "type": "impulse"
+    },
+    {
+      "networkId": 56,
+      "symbol": "LINK-WBNB-IMPULSE",
+      "tvl": 237274.3619777188,
+      "type": "impulse"
+    },
+    {
+      "networkId": 56,
+      "symbol": "CAKE-BUSDT-IMPULSE",
+      "tvl": 237274.3619769989,
+      "type": "impulse"
+    },
+    {
+      "networkId": 56,
+      "symbol": "DODO-WBNB-IMPULSE",
+      "tvl": 237318.39428797024,
+      "type": "impulse"
+    },
+    {
+      "networkId": 56,
+      "symbol": "BANANA-WBNB-IMPULSE",
+      "tvl": 237429.27736614086,
+      "type": "impulse"
+    },
+    {
+      "networkId": 56,
+      "symbol": "BANANA-BUSD-IMPULSE",
+      "tvl": 237426.83861341744,
+      "type": "impulse"
+    },
+    {
+      "networkId": 56,
+      "symbol": "TWT-WBNB-IMPULSE",
+      "tvl": 237426.83879118925,
+      "type": "impulse"
+    },
+    {
+      "networkId": 56,
+      "symbol": "AVAX-WBNB-IMPULSE",
+      "tvl": 237426.83879571638,
+      "type": "impulse"
+    },
+    {
+      "networkId": 100,
+      "symbol": "DHV",
+      "tvl": 0,
+      "type": "solo"
+    },
+    {
+      "networkId": 100,
+      "symbol": "DXIN",
+      "tvl": 28515.246424086472,
+      "type": "cluster"
+    },
+    {
+      "networkId": 100,
+      "symbol": "DXDC",
+      "tvl": 110636.46353801634,
+      "type": "cluster"
+    },
+    {
+      "networkId": 100,
+      "symbol": "HONEY-DHV-WXDAI",
+      "tvl": 117168.16384611334,
+      "type": "lp"
+    }
+  ];
 
 
 const findRecord = (networkId, symbol, where) => {
@@ -478,12 +659,14 @@ const findRecord = (networkId, symbol, where) => {
 
 (() => {
   const diffAccuracy = 1.1;
+  let tvlNotFound = 0;
   for (let i = 0; i < fromBack.length; i++) {
     const recordWhere = fromBack[i];
     const recordWhat = findRecord(recordWhere.networkId, recordWhere.symbol, fromDefiLama);
     if (recordWhat === null) {
       console.log("--------record not found--------------");
       console.log(JSON.stringify(recordWhere, null, 4));
+      tvlNotFound += recordWhere.tvl;
       continue;
     }
     let tvl1 = recordWhat.tvl;
@@ -498,5 +681,106 @@ const findRecord = (networkId, symbol, where) => {
       console.log(JSON.stringify(recordWhat, null, 4));
     }
   }
+  console.log('tvlNotFound', tvlNotFound);
 })();
 
+
+
+
+
+// DGAME    15202.68
+// DBSC     38152.89
+// DXIN     38713.49
+// DXDC     78008.53
+
+
+
+
+// --------record not found-------------- skip in defilama
+//   {
+//     "id": 10,
+//     "networkId": 137,
+//     "symbol": "USDC-MATIC-IMPULSE",
+//     "tvl": 1295.68,
+//     "apr": null,
+//     "apy": null,
+//     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+//     "updatedAt": "2022-01-17 11:38:58.295000 +00:00"
+//   }
+
+
+//
+// --------record not found--------------  DECR missing in defilama!
+//   {
+//     "id": 1,
+//     "networkId": 1,
+//     "symbol": "DECR",
+//     "decimals": 18,
+//     "tvl": 4334,
+//     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+//     "updatedAt": "2022-01-17 11:42:02.511622 +00:00"
+//   }
+
+
+
+
+// ---------------------- check it
+//   {
+//     "id": 2,
+//     "networkId": 137,
+//     "symbol": "DPOL",
+//     "decimals": 18,
+//     "tvl": 53734.65,
+//     "createdAt": "2022-01-13 07:20:39.818857 +00:00",
+//     "updatedAt": "2022-01-17 11:42:03.329266 +00:00"
+//   }
+// {
+//   "networkId": 137,
+//   "symbol": "DPOL",
+//   "tvl": 184977.16282787645
+// }
+
+
+
+
+(() => {
+  let tvlNotFound = 0;
+  let totalBalance = 0;
+  for (let i = 0; i < fromBack.length; i++) {
+    const recordWhere = fromBack[i];
+    const recordWhat = findRecord(recordWhere.networkId, recordWhere.symbol, fromDefiLama);
+    if (recordWhat === null) {
+      console.log('\u001b[34m')
+      console.log(recordWhere.networkId, recordWhere.symbol, recordWhere.tvl)
+      tvlNotFound += recordWhere.tvl;
+      continue;
+    }
+    let tvl1 = recordWhat.tvl;
+    let tvl2 = recordWhere.tvl;
+    if (recordWhat.tvl > recordWhere.tvl) {
+      tvl1 = recordWhere.tvl;
+      tvl2 = recordWhat.tvl;
+    }
+    let balance = recordWhat.tvl - recordWhere.tvl;
+    totalBalance += balance;
+    if (balance > 0)
+      console.log('\u001b[32m')
+    else
+      console.log('\u001b[31m')
+
+    console.log(recordWhere.networkId, recordWhere.symbol, recordWhat.type, balance)
+  }
+
+  for (let i = 0; i < fromDefiLama.length; i++) {
+    const recordWhere = fromDefiLama[i];
+    const recordWhat = findRecord(recordWhere.networkId, recordWhere.symbol, fromBack);
+    if (recordWhat === null) {
+      console.log('\u001b[36m')
+      console.log(recordWhere.networkId, recordWhere.symbol, recordWhere.tvl)
+      tvlNotFound += recordWhere.tvl;
+      continue;
+    }
+  }
+  console.log('\u001b[37m')
+  console.log('totalBalance', totalBalance)
+})();
