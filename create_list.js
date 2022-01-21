@@ -198,7 +198,7 @@ const dehiveAdapter = require("./dehive-adapter");
       body = "{//" + staking.displayName + " (" + staking.type + ")\n"
         + "meta: " + body + "tvl: \"" + tvlName + "\"\n" + "},\n";
       if (!skipRecord) {
-        allStakingPoolBody += body;
+        allStakingPoolBody = body;
       }
 
       networkBody = "'" + getNetworkName(networkId) + "'" + " : [\n" + allStakingPoolBody + "],\n";

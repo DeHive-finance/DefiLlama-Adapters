@@ -1,4 +1,4 @@
-// Auto generated at 17-1-2022 11:53
+// Auto generated at 21-1-2022 13:3
 module.exports = {
 'ethereum' : [
 {//DHV (solo)
