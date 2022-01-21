@@ -796,11 +796,14 @@ let ANSI_WHITE = "\u001B[37m";
   let tvlNotFound = 0;
   let totalBalance = 0;
   for (let i = 0; i < fromBack.length; i++) {
+    console.log(fromBack[i].networkId, fromBack[i].symbol, fromBack[i].tvl);
     totalBalance += fromBack[i].tvl;
   }
+  console.log('---------------')
   console.log('back totalBalance', totalBalance)
   totalBalance = 0;
   for (let i = 0; i < fromDefiLama.length; i++) {
+    console.log(fromDefiLama[i].networkId, fromDefiLama[i].symbol, fromDefiLama[i].tvl);
     totalBalance += fromDefiLama[i].tvl;
   }
   console.log('defilama totalBalance', totalBalance)
