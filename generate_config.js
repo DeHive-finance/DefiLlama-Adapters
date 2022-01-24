@@ -32,9 +32,23 @@ const { returnDecimals } = require("./projects/helper/utils");
 
   configResult += "module.exports = {\n";
 
+  const stakingPoolsMeta = {};
+
+  for (let n = 0; n < supportedNetworksIds.length; n++) {
+    stakingPoolsMeta[supportedNetworksIds[n]] = JSON.parse(JSON.stringify(dehiveConstants.stakingPoolsMeta(supportedNetworksIds[n])));
+  }
+
+  if (!stakingPoolsMeta[1]["DECR"]) {
+    stakingPoolsMeta[1]["DECR"] = {
+      type: "cluster",
+      asset: "DECR",
+      displayName: "DECR"
+    };
+  }
+
   for (let n = 0; n < supportedNetworksIds.length; n++) {
     let networkId = supportedNetworksIds[n];
-    const stackingMeta = dehiveConstants.stakingPoolsMeta(networkId);
+    const stackingMeta = stakingPoolsMeta[networkId];
     let networkBody = "";
     let allStakingPoolBody = "";
     let skipRecord = false;

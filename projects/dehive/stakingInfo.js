@@ -1,4 +1,4 @@
-// Auto generated at 17-1-2022 11:53
+// Auto generated at 24-1-2022 12:40
 module.exports = {
   'ethereum' : [
     {//DHV (solo)
@@ -21,6 +21,12 @@ module.exports = {
         poolId: 0
       },
       tvl: "lpStakingTvl"
+    },
+    {//DECR (cluster)
+      meta: {
+        clusterAddress: '0x6Bc3F65Fc50E49060e21eD6996be96ee4B404752', // DECR
+      },
+      tvl: "clusterTvl"
     },
   ],
   'polygon' : [
