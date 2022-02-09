@@ -32,44 +32,21 @@ const { returnDecimals } = require("./projects/helper/utils");
 
   configResult += "module.exports = {\n";
 
-  const stakingPoolsMeta = {};
-
-  for (let n = 0; n < supportedNetworksIds.length; n++) {
-    stakingPoolsMeta[supportedNetworksIds[n]] = JSON.parse(JSON.stringify(dehiveConstants.stakingPoolsMeta(supportedNetworksIds[n])));
-  }
-
-  if (!stakingPoolsMeta[1]["DECR"]) {
-    stakingPoolsMeta[1]["DECR"] = {
-      type: "cluster",
-      asset: "DECR",
-      displayName: "DECR"
-    };
-  }
-
   for (let n = 0; n < supportedNetworksIds.length; n++) {
     let networkId = supportedNetworksIds[n];
-    const stackingMeta = stakingPoolsMeta[networkId];
+    const stackingMeta = dehiveConstants.stakingPoolsMeta(supportedNetworksIds[n]);
+    const clusters = dehiveConstants.clusters(supportedNetworksIds[n]);
     let networkBody = "";
-    let allStakingPoolBody = "";
-    let skipRecord = false;
+    let allAssetsBody = "";
 
     for (let k of Object.keys(stackingMeta)) {
+      let skipRecord = false;
       const staking = stackingMeta[k];
       let body = "{},\n";
       let tvlName = "unknown";
-      if (staking.type === "impulse"
-        && getAssetAddress(networkId, staking.stakingContractSymbol) === "0xf4feb23531EdBe471a4493D432f8BB29Bf0A3868"
-        && staking.pid === 3) {
-        continue;
-      }
+
       switch (staking.type) {
-        case "cluster": {
-          body = "{\n";
-          body += "clusterAddress: '" + getAssetAddress(networkId, staking.asset) + "', // " + staking.asset + "\n";
-          body += "},\n";
-          tvlName = "clusterTvl";
-          break;
-        }
+        case "cluster":
         case "external": {
           skipRecord = true;
           break;
@@ -132,11 +109,26 @@ const { returnDecimals } = require("./projects/helper/utils");
       body = "{//" + staking.displayName + " (" + staking.type + ")\n"
         + "meta: " + body + "tvl: \"" + tvlName + "\"\n" + "},\n";
       if (!skipRecord) {
-        allStakingPoolBody += body;
+        allAssetsBody += body;
       }
     }
 
-    networkBody = "'" + getNetworkName(networkId) + "'" + " : [\n" + allStakingPoolBody + "],\n";
+    for (let cluster of clusters) {
+      let body = "{},\n";
+      let tvlName = "unknown";
+
+      body = "{\n";
+      body += "clusterAddress: '" + getAssetAddress(networkId, cluster) + "', // " + cluster + "\n";
+      body += "},\n";
+      tvlName = "clusterTvl";
+
+      body = "{//" + cluster + " (cluster)\n"
+        + "meta: " + body + "tvl: \"" + tvlName + "\"\n" + "},\n";
+
+      allAssetsBody += body;
+    }
+
+    networkBody = "'" + getNetworkName(networkId) + "'" + " : [\n" + allAssetsBody + "],\n";
 
     configResult += networkBody;
   }
