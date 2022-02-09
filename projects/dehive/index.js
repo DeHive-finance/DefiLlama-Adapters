@@ -204,10 +204,11 @@ async function chainTvl(chain, chainBlocks, exportType) {
                 continue;
         }
         if (
-          (staking.tvl === "stakingDhvTvl" && exportType !== EXPORT_TYPE_DHV_STAKING)
+          exportType !== EXPORT_TYPE_TVL
+          && ((staking.tvl === "stakingDhvTvl" && exportType !== EXPORT_TYPE_DHV_STAKING)
           || (staking.tvl !== "stakingDhvTvl" && exportType === EXPORT_TYPE_DHV_STAKING)
           || (staking.tvl === "lpStakingTvl" && exportType === EXPORT_TYPE_POOL2 && (staking.isPool2 !== true))
-          || (staking.tvl === "lpStakingTvl" && exportType !== EXPORT_TYPE_POOL2 && (staking.isPool2 === true))
+          || (staking.tvl === "lpStakingTvl" && exportType !== EXPORT_TYPE_POOL2 && (staking.isPool2 === true)))
         ) {
             continue;
         }
