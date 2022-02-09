@@ -87,6 +87,10 @@ const { returnDecimals } = require("./projects/helper/utils");
             }
             body += "],\n";
           }
+          if (staking.type === "lp") {
+            let isPool2 = (staking.underlyingTickers.length > 1) && (staking.underlyingTickers.includes("DHV"));
+            body += "isPool2: " + isPool2 + ",\n";
+          }
           body += "poolId: " + staking.pid + "\n";
           body += "},\n";
           if (staking.type === "lp") {
